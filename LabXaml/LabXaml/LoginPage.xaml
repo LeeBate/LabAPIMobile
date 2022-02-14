@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LabXaml.LoginPage"
+             xmlns:local="clr-namespace:LabXaml.ViewModels">
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Login" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+
+        <Entry Placeholder="Username" PlaceholderColor="Silver" FontSize="Title" Text="{Binding MyLogin.Email}"/>
+        <Entry Placeholder="Password" IsPassword="True" PlaceholderColor="Silver" FontSize="Title" Text="{Binding MyLogin.Password}"/>
+        <Label TextColor="red" Text="{Binding Result}"></Label>
+
+        <!--<Button Text="Click" Command="{Binding ShowCommand}"/>-->
+        <Button Text="Login" Command="{Binding LoginCommand}" />
+        <Button Text="Register" Command="{Binding RegisterCommand}"  />
+
+        <!--<Label Text="{Binding Mylogin.UserName}" FontSize="Large" HorizontalTextAlignment="Center"/>
+        <Label Text="{Binding Mylogin.Password}" FontSize="Large" HorizontalTextAlignment="Center"/>-->
+        <Label Text="{Binding ShowOutput}" FontSize="Large" HorizontalTextAlignment="Center"/>
+    </StackLayout>
+</ContentPage>
